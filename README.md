@@ -6,4 +6,4 @@ O to open/close sound settings <br>
 P to pause game <br>
 cheat: press num . to change enemy health to 1 (for the reason that the game has some balance issues, balance is in development) <br>
 <br> 
-my teammate https://github.com/NyanBanan FOLLOW US 
+my teammate https://github.com/NyanBanan 
