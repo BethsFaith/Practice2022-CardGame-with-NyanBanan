@@ -6,3 +6,4 @@ O to open/close sound settings
 P to pause game
 num . to change enemy health to 1 (game have some game balance problems(balance IN DEVELOP))
 
+my teammate https://github.com/NyanBanan FOLLOW US
