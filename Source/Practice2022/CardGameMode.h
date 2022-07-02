@@ -12,7 +12,7 @@
  * 
  */
 UCLASS()
-class PRACTICE2022_API ACardGameMode : public AGameModeBase // by глупая девочка
+class PRACTICE2022_API ACardGameMode : public AGameModeBase 
 {
 	GENERATED_BODY()
 

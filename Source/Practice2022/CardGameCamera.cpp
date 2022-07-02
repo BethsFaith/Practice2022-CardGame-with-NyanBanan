@@ -85,7 +85,6 @@ void ACardGameCamera::PrevCamera()
 	}
 }
 
-// авторство глупой девочки
 const int& ACardGameCamera::GetCameraNumber()
 {
 	return CameraNumber;

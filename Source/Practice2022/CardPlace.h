@@ -7,8 +7,6 @@
 #include "Card.h"
 #include "CardPlace.generated.h"
 
-// авторство глупой девочки
-
 UCLASS()
 class PRACTICE2022_API ACardPlace : public AActor
 {

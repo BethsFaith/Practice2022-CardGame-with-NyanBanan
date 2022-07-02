@@ -67,7 +67,6 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void BattleCry();
 
-	// авторство глупой девочки
 	void MoveAndRotate(float x, float y, float z, double pitch, double yaw, double roll);
 	UFUNCTION(BlueprintCallable)
 	bool isDead();

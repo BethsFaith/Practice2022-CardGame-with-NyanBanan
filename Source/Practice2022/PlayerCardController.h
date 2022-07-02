@@ -7,7 +7,7 @@
 #include "Card.h"
 #include <Kismet/GameplayStatics.h>
 #include "PlayerCardController.generated.h"
-// авторство глупой девочки
+
 /**
  * 
  */

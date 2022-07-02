@@ -2,9 +2,6 @@
 #include "CardPlace.h"
 #include "Deck.h"
 
-
-// авторство глупой девочки
-
 // Sets default values
 ACardPlace::ACardPlace()
 {

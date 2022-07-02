@@ -7,8 +7,6 @@
 #include "UObject/Object.h"
 #include "MyGameInstance.h"
 
-// by глупая девочка
-
 ACardGameMode::ACardGameMode()
 {
 	PlayerHPPlace = nullptr;

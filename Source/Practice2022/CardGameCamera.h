@@ -45,8 +45,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void PrevCamera();
 
-	// авторство глупой девочки
-
 	const int& GetCameraNumber();
 	ACard* GetSelectedCard();
 	void SetSelectedCard(ACard* InputCard);

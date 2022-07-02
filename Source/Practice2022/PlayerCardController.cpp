@@ -6,8 +6,6 @@
 #include "CardGameCamera.h"
 
 
-// авторство глупой девочки
-
 void APlayerCardController::SetupInputComponent()
 {
     Super::SetupInputComponent();

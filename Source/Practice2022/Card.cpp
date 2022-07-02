@@ -4,7 +4,7 @@
 #include "Card.h"
 //#include "D:\Diff Folders From C\Workbench\Code\UnrealProjects\Practice2022\Content\Blueprints\BP_Card.uasset"
 // Sets default values
-ACard::ACard() 
+ACard::ACard()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -85,7 +85,6 @@ FRotator ACard::GetLastRotation()
 	return this->MyLastRotation;
 }
 
-// авторство умной девочки
 void ACard::MoveAndRotate(float x, float y, float z, double pitch, double yaw, double roll)
 {
 	MyLastLocation = this->GetActorLocation();
