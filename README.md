@@ -1,8 +1,9 @@
-# Practice2022
-easy game made for 14 days by 2 peoples
-Developed with Unreal Engine 5
-WASD to move on first level
-O to open/close sound settings
-P to pause game
-num . to change enemy health to 1 (game have some game balance problems(balance IN DEVELOP))
-
+# Practice2022 <br>
+easy game made for 14 days by 2 peoples <br>
+Developed with Unreal Engine 5 <br>
+WASD to move on first level <br>
+O to open/close sound settings <br>
+P to pause game <br>
+cheat: press num . to change enemy health to 1 (for the reason that the game has some balance issues, balance is in development) <br>
+<br> 
+my teammate https://github.com/NyanBanan 
