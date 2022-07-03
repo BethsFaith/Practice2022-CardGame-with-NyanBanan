@@ -27,8 +27,6 @@ void ABaseCRPlayer::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (jumping)
-		Jump();
 }
 
 // Called to bind functionality to input
@@ -71,7 +69,10 @@ void ABaseCRPlayer::CheckJumping()
 	if (jumping)
 		jumping = false;
 	else
+	{
 		jumping = true;
+		Jump();
+	}
 }
 
 void ABaseCRPlayer::CheckRunning()

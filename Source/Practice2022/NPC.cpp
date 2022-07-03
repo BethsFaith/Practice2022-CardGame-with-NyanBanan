@@ -18,8 +18,8 @@ ANPC::ANPC()
 
 	ProxSphere->OnComponentBeginOverlap.AddDynamic(this, &ANPC::Prox);
 	NPCMessage = "Hi";// сообщение по умолчанию, может быть отредактировано
-	NPCTime = 5.f;
-	NPCColor = FColor::White;
+	MessageTime = 5.f;
+	MessageColor = FColor::White;
 }
 
 // Called when the game starts or when spawned
@@ -57,6 +57,6 @@ void ANPC::Prox_Implementation(UPrimitiveComponent* OverlappedComp, AActor* Othe
 	{
 		AMyHUD* hud = Cast<AMyHUD>(PController->GetHUD());
 		if (hud != nullptr)
-			hud->addMessage(FMessage(Face, Name + FString(": ") + NPCMessage, NPCTime, NPCColor));
+			hud->addMessage(FMessage(Face, Name + FString(": ") + NPCMessage, MessageTime, MessageColor));
 	}
 }

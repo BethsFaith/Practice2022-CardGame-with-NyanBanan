@@ -34,9 +34,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = NPCMessage)
 	FString NPCMessage;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = NPCMessage)
-	float NPCTime;
+	float MessageTime;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = NPCMessage)
-	FColor NPCColor;
+	FColor MessageColor;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = NPCName)
 	FString Name;
