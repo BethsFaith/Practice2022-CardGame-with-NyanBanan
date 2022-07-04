@@ -59,8 +59,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void EndCardGame();                                             // конец карточный игры (переход на первую локацию)
 
-	//bool AttackToFace(ACard* DamageCauser, ACard* DamageRecipient);// возвращает true если после атаки оппонент мертв
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	bool bReturnToMainLocation=false;                                // true если игра завершена и нужно вернуться в начальную локацию
 

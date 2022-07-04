@@ -4,10 +4,8 @@
 #include "BaseCRPlayer.h"
 #include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 
-// Sets default values
 ABaseCRPlayer::ABaseCRPlayer()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	Speed = 500;
@@ -16,20 +14,17 @@ ABaseCRPlayer::ABaseCRPlayer()
 	running = false;
 }
 
-// Called when the game starts or when spawned
 void ABaseCRPlayer::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-// Called every frame
 void ABaseCRPlayer::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
-// Called to bind functionality to input
 void ABaseCRPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -37,7 +32,6 @@ void ABaseCRPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 	PlayerInputComponent->BindAxis("MoveForward", this, &ABaseCRPlayer::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ABaseCRPlayer::MoveRight);
 
-	// Set up "look" bindings.
 	PlayerInputComponent->BindAxis("Turn", this, &ABaseCRPlayer::AddControllerYawInput);
 	PlayerInputComponent->BindAxis("LookUp", this, &ABaseCRPlayer::AddControllerPitchInput);
 
@@ -52,14 +46,12 @@ void ABaseCRPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 
 void ABaseCRPlayer::MoveForward(float Value)
 {
-	// Find out which way is "forward" and record that the player wants to move that way.
 	FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::X);
 	AddMovementInput(Direction, Value);
 }
 
 void ABaseCRPlayer::MoveRight(float Value)
 {
-	// Find out which way is "right" and record that the player wants to move that way.
 	FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::Y);
 	AddMovementInput(Direction, Value);
 }

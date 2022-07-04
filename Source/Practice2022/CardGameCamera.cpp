@@ -4,15 +4,12 @@
 #include "CardGameCamera.h"
 #include <Runtime/Engine/Classes/Kismet/GameplayStatics.h>
 
-// Sets default values
 ACardGameCamera::ACardGameCamera()
 {
- 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 }
 
-// Called when the game starts or when spawned
 void ACardGameCamera::BeginPlay()
 {
 	Super::BeginPlay();
@@ -22,13 +19,11 @@ void ACardGameCamera::BeginPlay()
 	UGameplayStatics::GetPlayerController(this, 0)->SetViewTarget(Cast<AActor>(CameraOne));
 }
 
-// Called every frame
 void ACardGameCamera::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }
 
-// Called to bind functionality to input
 void ACardGameCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);

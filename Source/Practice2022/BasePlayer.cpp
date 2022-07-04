@@ -3,36 +3,30 @@
 
 #include "BasePlayer.h"
 
-// Sets default values
+
 ABasePlayer::ABasePlayer()
 {
- 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	//Mesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
 	SceletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>("SceletalMesh");
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>("SpringArm");
 	Camera = CreateDefaultSubobject<UCameraComponent>("Camera");
 
-	//RootComponent = Mesh;
 	RootComponent = SceletalMesh;
 	SpringArm->SetupAttachment(SceletalMesh);
 	Camera->SetupAttachment(SpringArm);
 
-	//Mesh->SetSimulatePhysics(true);
 	MovementForce = 10000;
 	JumpImpulse = 1000;
 	jumping = false;
 }
 
-// Called when the game starts or when spawned
 void ABasePlayer::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
 void ABasePlayer::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -41,7 +35,6 @@ void ABasePlayer::Tick(float DeltaTime)
 		Jump();
 }
 
-// Called to bind functionality to input
 void ABasePlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -49,7 +42,6 @@ void ABasePlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	InputComponent->BindAxis("MoveForward", this, &ABasePlayer::MoveForward);
 	InputComponent->BindAxis("MoveRight", this, &ABasePlayer::MoveRight);
 
-	//InputComponent->BindAction("Jump", IE_Pressed, this, &ABasePlayer::Jump);
 	InputComponent->BindAction("Jump", IE_Pressed, this, &ABasePlayer::CheckJumping);
 	InputComponent->BindAction("Jump", IE_Released, this, &ABasePlayer::CheckJumping);
 }

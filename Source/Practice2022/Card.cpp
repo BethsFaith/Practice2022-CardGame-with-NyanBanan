@@ -2,11 +2,9 @@
 
 
 #include "Card.h"
-//#include "D:\Diff Folders From C\Workbench\Code\UnrealProjects\Practice2022\Content\Blueprints\BP_Card.uasset"
-// Sets default values
+
 ACard::ACard()
 {
- 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	Card_Mesh = CreateDefaultSubobject<UStaticMeshComponent>("Card_Mesh");
 	Picture_Mesh= CreateDefaultSubobject<UStaticMeshComponent>("Picture_Mesh");
@@ -43,25 +41,11 @@ ACard::ACard()
 }
 
 
- //Called when the game starts or when spawned
 void ACard::BeginPlay()
 {
 	Super::BeginPlay();
 	MyLastLocation = this->GetActorLocation();
 }
-
-// Called every frame
-//void ACard::Tick(float DeltaTime)
-//{
-//	Super::Tick(DeltaTime);
-//
-//}
-
-// Called to bind functionality to input
-//void ACard::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-//{
-//	Super::SetupPlayerInputComponent(PlayerInputComponent);
-//}
 
 void ACard::VisualStats() {
 	Text_HP->SetText(FText::AsNumber(HP));

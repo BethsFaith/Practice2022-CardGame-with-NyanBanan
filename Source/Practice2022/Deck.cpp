@@ -3,15 +3,12 @@
 #include "Deck.h"
 
 
-// Sets default values
 ADeck::ADeck()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 }
 
-// Called when the game starts or when spawned
 void ADeck::BeginPlay()
 {
 	srand(time(0));
@@ -21,7 +18,6 @@ void ADeck::BeginPlay()
 
 }
 
-// Called every frame
 void ADeck::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

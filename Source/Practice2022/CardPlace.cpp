@@ -2,10 +2,8 @@
 #include "CardPlace.h"
 #include "Deck.h"
 
-// Sets default values
 ACardPlace::ACardPlace()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	InvisibleMeshCube = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
@@ -41,13 +39,11 @@ ACardPlace::ACardPlace()
 	{
 		FrameCubes[i]->SetRelativeScale3D(FVector(11.6f, 0.25f, 0.25f));
 		FrameCubes[i]->SetRelativeRotation(FRotator(0.0f, 0.0f, 0.0f));
-		//FrameCubes[i]->SetVisibility(true);
 	}
 	for (int i{ 2 }; i < 4; ++i)
 	{
 		FrameCubes[i]->SetRelativeScale3D(FVector(12.03f, 0.25f, 0.25f));
 		FrameCubes[i]->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
-		//FrameCubes[i]->SetVisibility(true);
 	}
 
 	FrameCubes[0]->SetRelativeLocation(FVector(0.0f, 600.0f, 0.0f));
@@ -66,13 +62,11 @@ ACardPlace::ACardPlace(UStaticMeshComponent* iVMCube, UStaticMeshComponent* iVMF
 	Card = iCard;
 }
 
-// Called when the game starts or when spawned
 void ACardPlace::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-// Called every frame
 void ACardPlace::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

@@ -14,19 +14,11 @@ class PRACTICE2022_API ACard : public AActor
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this pawn's properties
-	ACard(); /*: ACard(FString(" "), 99, 99, FText::FromString(FString("Name"))){}*/
-	//ACard(FString PictureTex, int32 HP_, int32 Damage_, FText Name_);
+	ACard();
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:
-	// Called every frame
-	//virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	//virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UStaticMeshComponent* Card_Mesh;
@@ -76,7 +68,6 @@ public:
 
 	friend void AttackEachOther(ACard* Card1, ACard* Card2);
 private:
-	//	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FVector MyLastLocation;
 	FRotator MyLastRotation;
 };

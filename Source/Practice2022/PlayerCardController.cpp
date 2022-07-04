@@ -64,8 +64,7 @@ void APlayerCardController::ZoomCard() {
     ACardGameCamera* CardPlayer = Cast<ACardGameCamera>(this->GetPawn());
     if (CardPlayer == nullptr)
         return;
-    /*if (CardPlayer->GetSelectedCard() != nullptr)
-        this->OnMouseClick();*/
+
     if (CardPlayer->GetZoomedCard() != nullptr) {
         FVector loc = CardPlayer->GetZoomedCard()->GetLastLocation();
         FRotator rot = CardPlayer->GetZoomedCard()->GetLastRotation();

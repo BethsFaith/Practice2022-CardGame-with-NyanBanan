@@ -158,10 +158,9 @@ void ACardGameMode::EnemyWantsToPlay()
 {
 	int count = rand() % 2 + 2;
 
-	int i{};
 	if (PlayerHPPlace->GetCard()->HP > EnemyHPPlace->GetCard()->HP)
 		// ищет пустые места у себя на столе (защита)
-		for (i = 0; i < count; ++i)
+		while (count > 0)
 		{
 			int indexCard = GetIndexEnemyHandCard();
 			if (indexCard == -1)
@@ -188,7 +187,9 @@ void ACardGameMode::EnemyWantsToPlay()
 				break;
 		}
 	else // ищет пустые места у противника (атака)
-		for (i = 0; i < count; ++i)
+	{
+		int j{};
+		while (count > 0 && j < 2)
 		{
 			int indexCard = GetIndexEnemyHandCard();
 			if (indexCard == -1)
@@ -196,7 +197,7 @@ void ACardGameMode::EnemyWantsToPlay()
 				ChangeTurn();
 				return;
 			}
-			for (int j{}; j < 3; ++j)
+			for (j = 0; j < 3; ++j)
 				if (PlayerPlacedCards[j]->IsEmptyPlace() && EnemyPlacedCards[j]->IsEmptyPlace())
 				{
 					EnemyHandCards[indexCard]->GetCard()->BattleCry();
@@ -204,12 +205,10 @@ void ACardGameMode::EnemyWantsToPlay()
 					--count;
 					break;
 				}
-				else
-					if (j == 2)
-						break;
 		}
+	}
 
-	for (i = 0; i < count; ++i)
+	for (int i = 0; i < count; ++i)
 	{
 		int indexCard = GetIndexEnemyHandCard();
 		if (indexCard == -1)
@@ -275,18 +274,6 @@ void ACardGameMode::EndTurn()
 		}
 	}
 }
-
-//bool ACardGameMode::AttackToFace(ACard* DamageCauser, ACard* DamageRecipient)
-//{
-//	DamageCauser->AttackToFace(DamageRecipient);
-//	if (DamageRecipient->isDead())
-//	{
-//		DamageRecipient->Destroy();
-//		return true;
-//	}
-//	else
-//		return false;
-//}
 
 void ACardGameMode::ChangeTurn()
 {

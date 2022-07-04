@@ -6,10 +6,9 @@
 #include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 #include "BaseCRPlayer.h"
 
-// Sets default values
+
 ANPC::ANPC()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	ProxSphere = CreateDefaultSubobject<USphereComponent>(TEXT("Proximity Sphere"));
@@ -22,21 +21,18 @@ ANPC::ANPC()
 	MessageColor = FColor::White;
 }
 
-// Called when the game starts or when spawned
+
 void ANPC::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
-// Called every frame
 void ANPC::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
-// Called to bind functionality to input
 void ANPC::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -47,8 +43,7 @@ void ANPC::Prox_Implementation(UPrimitiveComponent* OverlappedComp, AActor* Othe
 	OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult&
 	SweepResult)
 {
-	// если актор, с которым произошло пересечение, это не игрок,
-	// вы просто должны вернуться из функции
+	// если актор, с которым произошло пересечение, это не игрок, вернуться из функции
 	if (Cast<ABaseCRPlayer>(OtherActor) == nullptr)
 		return;
 
